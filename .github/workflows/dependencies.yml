@@ -27,8 +27,23 @@ jobs:
     steps:
       - run: echo "Deploying..."
 
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Liniting is done"
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "unit test are done"
+
+  e2-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "e2-tests are done"
+
   post:
     runs-on: ubuntu-latest
-    needs: [build, test, deploy]
+    needs: [build, test, deploy, linting, unit-tests, e2-tests]
     steps:
       - run: echo "$date - Done with workflows!"
