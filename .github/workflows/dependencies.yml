@@ -57,7 +57,8 @@ jobs:
     steps:
       - name: Set Python Version
         id: get_python_version
-        run: python3 --version
+        run: |
+          echo "python_version=%s" python3 --version >> $GITHUB_OUTPUT
 
   after-prepate:
     runs-on: ubuntu-latest
