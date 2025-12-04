@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Install & Commit
 
 # Controls when the workflow will run
 on:
@@ -60,7 +60,7 @@ jobs:
           git add -A
           # Avoid failing when nothing changed
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update status [skip ci]"
+            git commit -m "updated the python requirements based on agent"
           else
             echo "No changes to commit."
           fi
