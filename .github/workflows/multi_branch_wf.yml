@@ -36,3 +36,4 @@ jobs:
         run: |
           echo "Branch: ${{ github.ref_name }}"
           echo "Environment: $ENV_MODE"
+          echo "Env Mode: ${{ inputs.target_env }}"
