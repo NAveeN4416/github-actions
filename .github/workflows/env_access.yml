@@ -25,4 +25,7 @@ jobs:
           MESSAGE: "Hello World"
         run: echo "$MESSAGE"
 
+      - name: Echo Actuall Env
+        run: echo "Env variable ${{ vars.MY_SAMPLE_AUDIO }}"
+
       
