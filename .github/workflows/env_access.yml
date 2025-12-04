@@ -1,4 +1,4 @@
-name: Env & Secrets Access
+name: EnvSecrets Access
 
 # Controls when the workflow will run
 on:
