@@ -1,0 +1,28 @@
+name: Depedencies & Concurrencies
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  banner:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is banner job! runs parallel!"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Building..."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build      # 👈 test waits for build
+    steps:
+      - run: echo "Running tests..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test       # 👈 deploy waits for test
+    steps:
+      - run: echo "Deploying..."
