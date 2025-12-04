@@ -5,7 +5,7 @@ on:
 
 concurrency:
   group: dependency-group
-  cancel-in-progress: false   # NEVER cancel in middle of deploy
+  cancel-in-progress: true   # NEVER cancel in middle of deploy
 
 jobs:
   banner:
