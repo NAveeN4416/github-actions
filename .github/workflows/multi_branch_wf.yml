@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     
     # 👇 choose GitHub Environment based on branch
-    environment: ${{ github.ref_name }}
+    environment: ${{ inputs.target_env }}
     
     # dev / staging / prod environment must exist
     env:
