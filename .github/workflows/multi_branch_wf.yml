@@ -6,6 +6,7 @@ on:
       - dev
       - stage
       - main
+  workflow_dispatch:
 
 jobs:
   test:
@@ -16,9 +17,7 @@ jobs:
     
     # dev / staging / prod environment must exist
     env:
-      SERVER_HOST: ${{ vars.SERVER_HOST }}
-      SERVER_USER: ${{ vars.SERVER_USER }}
-      SSH_KEY: ${{ secrets.SSH_KEY }}
+      ENV_MODE: ${{ vars.ENV_MODE }}
 
     steps:
       - uses: actions/checkout@v4
@@ -26,5 +25,4 @@ jobs:
       - name: Show where we are testing
         run: |
           echo "Branch: ${{ github.ref_name }}"
-          echo "Environment: ${{ github.ref_name }}"
-      
+          echo "Environment: $ENV_MODE"
