@@ -29,5 +29,6 @@ jobs:
 
   post:
     runs-on: ubuntu-latest
+    needs: [build, test, deploy]
     steps:
       - run: echo "$date - Done with workflows!"
