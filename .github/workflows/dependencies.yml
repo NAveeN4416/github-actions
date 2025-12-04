@@ -3,8 +3,11 @@ name: Depedencies & Concurrencies
 on:
   workflow_dispatch:
 
-jobs:
+concurrency:
+  group: dependency-group
+  cancel-in-progress: false   # NEVER cancel in middle of deploy
 
+jobs:
   banner:
     runs-on: ubuntu-latest
     steps:
