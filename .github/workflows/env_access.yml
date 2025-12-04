@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  env_setup:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,6 +26,6 @@ jobs:
         run: echo "$MESSAGE"
 
       - name: Echo Actuall Env
-        run: echo "Env variable ${{ vars.MY_SAMPLE_AUDIO }}"
-
-      
+        env:
+          AUIDO_URL: ${{ vars.MY_SAMPLE_AUDIO }}
+        run: echo "Env variable MY_SAMPLE_AUDIO:- $AUIDO_URL"
