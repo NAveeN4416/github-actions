@@ -58,6 +58,7 @@ jobs:
       - name: Set Python Version
         id: get_python_version
         run: |
+          echo "python_version=$(python3 --version)"
           echo "python_version=$(python3 --version)" >> $GITHUB_OUTPUT
 
   after-prepate:
