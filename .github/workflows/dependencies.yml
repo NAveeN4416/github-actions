@@ -26,3 +26,8 @@ jobs:
     needs: test       # 👈 deploy waits for test
     steps:
       - run: echo "Deploying..."
+
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$date - Done with workflows!"
